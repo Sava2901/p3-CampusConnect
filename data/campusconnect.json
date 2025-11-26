@@ -1,0 +1,90 @@
+{
+  "users" : [ {
+    "id" : 1,
+    "username" : "sava",
+    "role" : "STUDENT",
+    "student" : true,
+    "professor" : false
+  }, {
+    "id" : 2,
+    "username" : "odobasian",
+    "role" : "PROFESSOR",
+    "student" : false,
+    "professor" : true
+  }, {
+    "id" : 3,
+    "username" : "sava_professor",
+    "role" : "PROFESSOR",
+    "student" : false,
+    "professor" : true
+  } ],
+  "courses" : [ {
+    "id" : 1,
+    "name" : "Algorithms"
+  }, {
+    "id" : 2,
+    "name" : "Data Structures"
+  }, {
+    "id" : 3,
+    "name" : "Databases"
+  } ],
+  "enrollments" : [ {
+    "userId" : 1,
+    "courseId" : 3
+  } ],
+  "questions" : [ {
+    "id" : 1,
+    "courseId" : 1,
+    "authorId" : 1,
+    "title" : "date of p3 midterm",
+    "content" : "can you pls tell me when is the midterm scheduled?",
+    "tags" : [ "midterm", "p3" ],
+    "createdAt" : "2025-11-24T09:37:21.009979800Z"
+  }, {
+    "id" : 2,
+    "courseId" : 3,
+    "authorId" : 1,
+    "title" : "project",
+    "content" : "what are the project requirement and where are they posted?",
+    "tags" : [ "project", "db", "requirements", "deadline" ],
+    "createdAt" : "2025-11-26T19:10:26.058924800Z"
+  } ],
+  "answers" : [ {
+    "id" : 1,
+    "questionId" : 1,
+    "authorId" : 2,
+    "content" : "asdasdasda",
+    "official" : true
+  }, {
+    "id" : 2,
+    "questionId" : 2,
+    "authorId" : 1,
+    "content" : "answer1",
+    "official" : false
+  }, {
+    "id" : 3,
+    "questionId" : 2,
+    "authorId" : 3,
+    "content" : "5 cinci five",
+    "official" : true
+  } ],
+  "votes" : [ {
+    "questionId" : 2,
+    "userId" : 1,
+    "value" : 1
+  } ],
+  "notifications" : [ {
+    "id" : 1,
+    "userId" : 1,
+    "message" : "Your question received an official answer.",
+    "createdAt" : "2025-11-26T18:46:15.205020100Z",
+    "read" : true
+  }, {
+    "id" : 2,
+    "userId" : 1,
+    "message" : "Your question received an official answer.",
+    "createdAt" : "2025-11-26T20:35:09.275158400Z",
+    "read" : true
+  } ],
+  "auditLogs" : [ ]
+}
