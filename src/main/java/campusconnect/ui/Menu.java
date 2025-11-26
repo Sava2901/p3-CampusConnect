@@ -25,14 +25,19 @@ public class Menu {
             AtomicInteger idx = new AtomicInteger(0);
             AtomicBoolean done = new AtomicBoolean(false);
             AtomicBoolean quit = new AtomicBoolean(false);
+            AtomicBoolean firstRender = new AtomicBoolean(true);
 
             Thread renderer = new Thread(() -> {
                 int prev = -1;
                 while (!done.get() && !quit.get()) {
                     int current = idx.get();
-                    if (current != prev) {
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
+                    if (current != prev || firstRender.get()) {
+                        try {
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                        } catch (Exception e) {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                        }
                         System.out.println(title);
                         System.out.println("Use arrow keys/WASD to navigate, Enter to select");
                         System.out.println();
@@ -41,6 +46,7 @@ public class Menu {
                             System.out.println(arrow + (i + 1) + ". " + options.get(i));
                         }
                         prev = current;
+                        firstRender.set(false);
                     }
                     try { Thread.sleep(16); } catch (InterruptedException ignored) {}
                 }
@@ -99,8 +105,12 @@ public class Menu {
     private static int fallback(String title, List<String> options) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            try {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } catch (Exception e) {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
             System.out.println(title);
             System.out.println("=".repeat(Math.max(30, title.length())));
             for (int i = 0; i < options.size(); i++) {

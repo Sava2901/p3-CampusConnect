@@ -364,5 +364,40 @@
     "actorUserId" : 1,
     "action" : "login",
     "timestamp" : "2025-11-26T20:45:04.281796300Z"
+  }, {
+    "id" : 74,
+    "actorUserId" : 1,
+    "action" : "login",
+    "timestamp" : "2025-11-26T21:24:44.530499200Z"
+  }, {
+    "id" : 75,
+    "actorUserId" : 1,
+    "action" : "login",
+    "timestamp" : "2025-11-26T21:26:59.013906200Z"
+  }, {
+    "id" : 76,
+    "actorUserId" : 1,
+    "action" : "vote:2:-1",
+    "timestamp" : "2025-11-26T21:27:38.717485Z"
+  }, {
+    "id" : 77,
+    "actorUserId" : 1,
+    "action" : "vote:2:1",
+    "timestamp" : "2025-11-26T21:27:43.489157400Z"
+  }, {
+    "id" : 78,
+    "actorUserId" : 3,
+    "action" : "login",
+    "timestamp" : "2025-11-26T21:28:06.724343200Z"
+  }, {
+    "id" : 79,
+    "actorUserId" : 3,
+    "action" : "login",
+    "timestamp" : "2025-11-26T21:28:58.408117Z"
+  }, {
+    "id" : 80,
+    "actorUserId" : 3,
+    "action" : "vote:2:1",
+    "timestamp" : "2025-11-26T21:29:33.082532100Z"
   } ]
 }

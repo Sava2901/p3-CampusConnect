@@ -35,6 +35,9 @@ public class CampusConnectApp {
     }
 
     public void run() {
+        // Clear screen at application start
+        clearScreen();
+        
         while (true) {
             if (currentUser == null) {
                 int sel = Menu.choose("CampusConnect", java.util.List.of("Login", "Register", "Exit"));
@@ -83,7 +86,6 @@ public class CampusConnectApp {
         opts.add("Browse all courses");
         opts.add("View course questions");
         opts.add("Search questions");
-        opts.add("Vote on question");
         opts.add("My notifications");
         opts.add("Logout");
         opts.add("Exit");
@@ -94,10 +96,9 @@ public class CampusConnectApp {
             case 0 -> uiListCourses();
             case 1 -> uiListCourseQuestions();
             case 2 -> uiSearchQuestions();
-            case 3 -> uiVoteQuestion();
-            case 4 -> uiNotifications();
-            case 5 -> currentUser = null;
-            case 6 -> System.exit(0);
+            case 3 -> uiNotifications();
+            case 4 -> currentUser = null;
+            case 5 -> System.exit(0);
         }
     }
 
@@ -925,8 +926,13 @@ public class CampusConnectApp {
     }
 
     private void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            // Fallback to ANSI codes if cls fails
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
     }
 
     private void waitForBack() {
