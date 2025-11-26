@@ -33,4 +33,7 @@ foreach ($d in $deps) {
 
 $javaFiles = Get-ChildItem -Path (Join-Path $root "src\main\java") -Filter *.java -Recurse | ForEach-Object { $_.FullName }
 & javac -cp "$lib\*" -d $out $javaFiles
-& java -cp "$out;$lib\*" org.example.Main
+
+# Pass database path as argument (default or provided)
+$dbPath = if ($args.Length -gt 0) { $args[0] } else { "data\campusconnect.json" }
+& java -cp "$out;$lib\*" org.example.Main $dbPath

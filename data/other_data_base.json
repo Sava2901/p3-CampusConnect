@@ -1,0 +1,19 @@
+{
+  "users" : [ ],
+  "courses" : [ {
+    "id" : 1,
+    "name" : "Algorithms"
+  }, {
+    "id" : 2,
+    "name" : "Data Structures"
+  }, {
+    "id" : 3,
+    "name" : "Databases"
+  } ],
+  "enrollments" : [ ],
+  "questions" : [ ],
+  "answers" : [ ],
+  "votes" : [ ],
+  "notifications" : [ ],
+  "auditLogs" : [ ]
+}

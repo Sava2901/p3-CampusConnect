@@ -399,5 +399,10 @@
     "actorUserId" : 3,
     "action" : "vote:2:1",
     "timestamp" : "2025-11-26T21:29:33.082532100Z"
+  }, {
+    "id" : 81,
+    "actorUserId" : 1,
+    "action" : "login",
+    "timestamp" : "2025-11-26T22:41:04.277442Z"
   } ]
 }
